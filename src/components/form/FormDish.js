@@ -3,22 +3,23 @@ import { useDispatch,useSelector } from 'react-redux';
 import PizzaDish from '../typeDish/PizzaDish';
 import SoupDish from '../typeDish/SoupDish';
 import SandwichDish from '../typeDish/SandwichDish';
-import { useHttp } from '../../hooks/http.hook';
 
 import { formDishType, 
         formDishNumberSliceOfPizza, 
         formDishDiameterPizza, 
         formDishSpicinessScale, 
-        formDishSlicesOfBread } from './FormDishSlice';
+        formDishSlicesOfBread, 
+        postFormDish,
+        formDishLoading } from './FormDishSlice';
 
 import { v4 as uuidv4 } from 'uuid';
 
 import './FormDish.scss';
+import ErrorMessage from '../errorMessage/ErrorMessage';
 
 const FormDish = () => {
 
-    const {request} = useHttp();
-    const {selectType, numberOfSlices, diameter, spicinessScale, slicesOfBread} = useSelector(state => state.formDish);
+    const {selectType, numberOfSlices, diameter, spicinessScale, slicesOfBread, formDishLoadingStatus} = useSelector(state => state.formDish);
     const dispatch = useDispatch();
 
     const [dishName, setDishName] = useState('');
@@ -61,10 +62,8 @@ const FormDish = () => {
                 id: uuidv4()
             }
         }
-        // http://localhost:3001/heroes
-        request("https://frosty-wood-6558.getsandbox.com:443/dishes", "POST", JSON.stringify(newDish))
-            .then(res => console.log(res, 'Отправка успешна'))
-            .catch(err => err);
+
+        dispatch(postFormDish(newDish));
 
         setDishName('');
         setPreparationTime('');
@@ -75,11 +74,18 @@ const FormDish = () => {
         dispatch(formDishSpicinessScale(''));
         dispatch(formDishSlicesOfBread(''));
     }
+    
+    if(formDishLoadingStatus === 'error'){
+        setTimeout(() => dispatch(formDishLoading('idle')), 3000);
+    }
 
     return(
         <div className="modal">
             <div className="modal__dialog">
                 <div className="modal__content">
+
+                    {formDishLoadingStatus === 'error' ?  <ErrorMessage/>: null}
+
                     <form onSubmit={onSubmitDish}>
                         <div className="modal__title">Order the Dish</div>
                         <input 
