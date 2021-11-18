@@ -16,6 +16,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import './FormDish.scss';
 import ErrorMessage from '../errorMessage/ErrorMessage';
+import SuccessMessage from '../successMessage/successMessage';
 
 const FormDish = () => {
 
@@ -39,26 +40,26 @@ const FormDish = () => {
         if(selectType === 'pizza'){
             newDish = {
                 name: dishName,
-                preparation: preparationTime,
+                preparation_time: preparationTime,
                 type: selectType,
-                no_of_slices: numberOfSlices,
-                diameter: diameter,
+                no_of_slices: +numberOfSlices,
+                diameter: +diameter,
                 id: uuidv4()
             }
         }else if(selectType === 'soup') {
             newDish = {
                 name: dishName,
-                preparation: preparationTime,
+                preparation_time: preparationTime,
                 type: selectType,
-                spiciness_scale: spicinessScale,
+                spiciness_scale: +spicinessScale,
                 id: uuidv4()
             }
         }else if(selectType === 'sandwich') {
             newDish = {
                 name: dishName,
-                preparation: preparationTime,
+                preparation_time: preparationTime,
                 type: selectType,
-                slices_of_bread: slicesOfBread,
+                slices_of_bread: +slicesOfBread,
                 id: uuidv4()
             }
         }
@@ -76,15 +77,20 @@ const FormDish = () => {
     }
     
     if(formDishLoadingStatus === 'error'){
-        setTimeout(() => dispatch(formDishLoading('idle')), 3000);
+        setTimeout(() => dispatch(formDishLoading('')), 3000);
+    }
+
+    if(formDishLoadingStatus === 'idle'){
+        setTimeout(() => dispatch(formDishLoading('')), 3000);
     }
 
     return(
         <div className="modal">
             <div className="modal__dialog">
                 <div className="modal__content">
-
+                
                     {formDishLoadingStatus === 'error' ?  <ErrorMessage/>: null}
+                    {formDishLoadingStatus === 'idle' ?  <SuccessMessage/>: null}
 
                     <form onSubmit={onSubmitDish}>
                         <div className="modal__title">Order the Dish</div>
@@ -102,6 +108,7 @@ const FormDish = () => {
                             placeholder="preparation time" 
                             name="preparation_time" 
                             type="time" 
+                            step='2'
                             className="modal__input" 
                             value={preparationTime}
                             onChange={(e) => setPreparationTime(e.target.value)}/>

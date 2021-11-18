@@ -7,7 +7,7 @@ const initialState = {
     slicesOfBread: '',
     spicinessScale: '',
     selectType: '',
-    formDishLoadingStatus: 'idle'
+    formDishLoadingStatus: ''
 }
 
 export const postFormDish = createAsyncThunk(
