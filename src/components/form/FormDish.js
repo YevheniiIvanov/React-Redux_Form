@@ -17,6 +17,7 @@ import { v4 as uuidv4 } from 'uuid';
 import './FormDish.scss';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import SuccessMessage from '../successMessage/successMessage';
+import Spinner from '../spiner/Spiner';
 
 const FormDish = () => {
 
@@ -91,6 +92,7 @@ const FormDish = () => {
                 
                     {formDishLoadingStatus === 'error' ?  <ErrorMessage/>: null}
                     {formDishLoadingStatus === 'idle' ?  <SuccessMessage/>: null}
+                    {formDishLoadingStatus === 'loading' ?  <Spinner/>: null}
 
                     <form onSubmit={onSubmitDish}>
                         <div className="modal__title">Order the Dish</div>
@@ -124,9 +126,11 @@ const FormDish = () => {
                                 <option value='soup'>Soup</option>
                                 <option value='sandwich'>Sandwich</option>
                         </select>
+
                         {selectType === 'pizza' ? <PizzaDish/> : null}
                         {selectType === 'soup' ? <SoupDish/> : null}
                         {selectType === 'sandwich' ? <SandwichDish/> : null}
+
                         <button type="submit" className="modal__btn">Order</button>
                     </form>
                 </div>

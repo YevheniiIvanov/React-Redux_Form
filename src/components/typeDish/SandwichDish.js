@@ -14,7 +14,7 @@ const SandwichDish = () => {
             min='1'
             max='10'
             onChange={(e) => dispatch(formDishSlicesOfBread(e.target.value))}
-            />
+        />
     )
 }
 

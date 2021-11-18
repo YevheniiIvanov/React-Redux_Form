@@ -6,7 +6,11 @@ const PizzaDish = () => {
     const dispatch = useDispatch();
 
     return (
-        <div style={{width: '330px', display: 'flex', justifyContent: 'space-around', margin: '0 auto', padding: '0 0 20px 0'}}>
+        <div style={{width: '330px',
+                    display: 'flex', 
+                    justifyContent: 'space-around', 
+                    margin: '0 auto', 
+                    padding: '0 0 20px 0'}}>
             <input 
                 required 
                 placeholder="Number of pieces" 

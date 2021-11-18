@@ -1,122 +1,19 @@
 {
-  "heroes": [
+  "posts": [
     {
-      "id": "3b3dbfba-b606-438e-8d8a-69b136de9f08",
-      "name": "vfdv",
-      "preparation": "02:03",
-      "type": "pizza"
-    },
-    {
-      "id": "ea745784-eab8-46bb-bcc8-6e4a91f7cf03",
-      "name": "fdvfrgv",
-      "preparation": "01:03",
-      "type": "pizza"
-    },
-    {
-      "id": "749ff765-c2e8-47f8-8401-c0e59ada7154",
-      "name": "srrf",
-      "preparation": "03:34",
-      "type": "pizza"
-    },
-    {
-      "name": "wergerg4g4t43r34wf4ef4rf4",
-      "preparation": "11:11",
-      "type": "pizza",
-      "no_of_slices": "1",
-      "diameter": "18.0",
-      "id": "8e8aead1-5be3-4cda-9c8d-da5b3570b6b1"
-    },
-    {
-      "name": "sgrvrd",
-      "preparation": "01:01",
-      "type": "pizza",
-      "no_of_slices": "1",
-      "diameter": "33.4",
-      "id": "5444f84e-8f63-4480-9ee8-e14b80d3f453"
-    },
-    {
-      "name": "srgar",
-      "preparation": "02:02",
-      "type": "pizza",
-      "no_of_slices": "1",
-      "diameter": "33.4",
-      "id": "4723262b-b617-45df-aee1-9016aa7a70a1"
-    },
-    {
-      "name": "dgr",
-      "preparation": "01:01",
-      "type": "pizza",
-      "no_of_slices": "1",
-      "diameter": "33.4",
-      "id": "e0966012-57b8-4e11-a09f-4c91464597cd"
-    },
-    {
-      "name": "sdfrv",
-      "preparation": "01:02",
-      "type": "sandwich",
-      "no_of_slices": "1",
-      "diameter": "33.4",
-      "id": "4f178549-8912-40dc-80fd-3514ca6e4f9a"
-    },
-    {
-      "name": "arsgr",
-      "preparation": "01:01",
-      "type": "pizza",
-      "no_of_slices": "1",
-      "diameter": "33.4",
-      "id": "f53d6167-be69-492f-a312-84752ce1cbb7"
-    },
-    {
-      "name": "sdgrg",
-      "preparation": "02:03",
-      "type": "soup",
-      "spiciness_scale": "1",
-      "id": "6e657d54-fde2-46d1-b847-b2e388bfbb97"
-    },
-    {
-      "name": "dafgrg",
-      "preparation": "03:03",
-      "type": "pizza",
-      "no_of_slices": "1",
-      "diameter": "22.5",
-      "id": "5de406fd-235b-4b42-8ba8-4f87de05058f"
-    },
-    {
-      "name": "sdavrv",
-      "preparation": "03:03",
-      "type": "soup",
-      "spiciness_scale": "2",
-      "id": "be827f6d-88b1-46a6-9018-4bb5c6c0bc23"
-    },
-    {
-      "name": "svrv",
-      "preparation": "03:02",
-      "type": "pizza",
-      "no_of_slices": "0",
-      "diameter": "22.5",
-      "id": "c6ec4d33-87e3-4b99-90f3-cc355056762d"
-    },
-    {
-      "name": "ewgregrvb",
-      "preparation": "01:01",
-      "type": "pizza",
-      "no_of_slices": "1",
-      "diameter": "33.4",
-      "id": "45deef09-6983-4de4-89ba-b467448ef080"
-    },
-    {
-      "name": "2ewf",
-      "preparation": "03:02",
-      "type": "soup",
-      "spiciness_scale": "1",
-      "id": "b8725791-7153-4708-b73b-b7a08b60e556"
-    },
-    {
-      "name": "sdasvrv",
-      "preparation": "03:02",
-      "type": "sandwich",
-      "slices_of_bread": "1",
-      "id": "933cb3b3-95d3-42b2-9c0c-9225658bddf3"
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
     }
-  ]
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }
